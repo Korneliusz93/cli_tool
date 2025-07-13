@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug System Info",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "linux_cli_utils.sysinfo",
+            "args": ["overview"],
+            "console": "integratedTerminal",
+            "python": "/home/admin/Programs/console_apps/.venv/bin/python"
+        },
+        {
+            "name": "Debug File Manager",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "linux_cli_utils.filemanager",
+            "args": ["ls", "-l"],
+            "console": "integratedTerminal",
+            "python": "/home/admin/Programs/console_apps/.venv/bin/python"
+        },
+        {
+            "name": "Debug Network Tools",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "linux_cli_utils.nettools",
+            "args": ["interfaces"],
+            "console": "integratedTerminal",
+            "python": "/home/admin/Programs/console_apps/.venv/bin/python"
+        },
+        {
+            "name": "Debug Process Tools",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "linux_cli_utils.proctools",
+            "args": ["top", "-l", "5"],
+            "console": "integratedTerminal",
+            "python": "/home/admin/Programs/console_apps/.venv/bin/python"
+        }
+    ]
+}

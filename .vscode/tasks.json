@@ -1,0 +1,83 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Linux CLI Utils",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": [
+				"-m",
+				"linux_cli_utils.cli",
+				"--help"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$python"
+			]
+		},
+		{
+			"label": "System Info Overview",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": ["-m", "linux_cli_utils.sysinfo", "overview"],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": ["$python"]
+		},
+		{
+			"label": "File Manager List",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": ["-m", "linux_cli_utils.filemanager", "ls", "-l"],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": ["$python"]
+		},
+		{
+			"label": "Network Interfaces",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": ["-m", "linux_cli_utils.nettools", "interfaces"],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": ["$python"]
+		},
+		{
+			"label": "Process Top",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": ["-m", "linux_cli_utils.proctools", "top", "-l", "10"],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": ["$python"]
+		},
+		{
+			"label": "Run Tests",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": ["-m", "pytest", "tests/", "-v"],
+			"group": "test",
+			"isBackground": false,
+			"problemMatcher": ["$python"]
+		},
+		{
+			"label": "Format Code",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": ["-m", "black", "src/", "tests/"],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Package",
+			"type": "shell",
+			"command": "/home/admin/Programs/console_apps/.venv/bin/python",
+			"args": ["-m", "pip", "install", "-e", "."],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": ["$python"]
+		}
+	]
+}

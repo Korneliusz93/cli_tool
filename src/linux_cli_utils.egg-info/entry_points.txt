@@ -1,0 +1,6 @@
+[console_scripts]
+filemanager = linux_cli_utils.filemanager:main
+linux-utils = linux_cli_utils.cli:main
+nettools = linux_cli_utils.nettools:main
+proctools = linux_cli_utils.proctools:main
+sysinfo = linux_cli_utils.sysinfo:main
