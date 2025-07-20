@@ -1,6 +1,5 @@
 """System information utilities."""
 
-import subprocess
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -11,17 +10,10 @@ from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 
+from .utils import run_command, format_size, format_time
+
 app = typer.Typer(help="System information utilities")
 console = Console()
-
-
-def run_command(cmd: str) -> Optional[str]:
-    """Run a shell command and return its output."""
-    try:
-        result = subprocess.run(cmd.split(), capture_output=True, text=True, check=True)
-        return result.stdout.strip()
-    except subprocess.CalledProcessError:
-        return None
 
 
 def get_cpu_info() -> Dict[str, str]:

@@ -19,6 +19,9 @@ case "$1" in
     "proc")
         "$PYTHON_PATH" -m linux_cli_utils.proctools "${@:2}"
         ;;
+    "backup")
+        "$PYTHON_PATH" -m linux_cli_utils.backup "${@:2}"
+        ;;
     "test")
         "$PYTHON_PATH" -m pytest tests/ -v
         ;;
@@ -38,6 +41,7 @@ case "$1" in
         echo "  file [cmd]       - File management utilities"
         echo "  net [cmd]        - Network utilities"
         echo "  proc [cmd]       - Process management utilities"
+        echo "  backup [cmd]     - Backup and snapshot utilities"
         echo "  test             - Run test suite"
         echo "  format           - Format code with Black"
         echo "  install          - Install package in development mode"
@@ -48,6 +52,7 @@ case "$1" in
         echo "  $0 file ls -l"
         echo "  $0 net interfaces"
         echo "  $0 proc top -l 5"
+        echo "  $0 backup list-snapshots"
         echo "  $0 test"
         ;;
     *)

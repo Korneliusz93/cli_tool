@@ -1,7 +1,6 @@
 """Network utilities."""
 
 import socket
-import subprocess
 from typing import Dict, List, Optional, Tuple
 import re
 
@@ -10,19 +9,10 @@ from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 
+from .utils import run_command, format_size, format_time
+
 app = typer.Typer(help="Network utilities")
 console = Console()
-
-
-def run_command(cmd: str) -> Optional[str]:
-    """Run a shell command and return its output."""
-    try:
-        result = subprocess.run(
-            cmd, shell=True, capture_output=True, text=True, check=True
-        )
-        return result.stdout.strip()
-    except subprocess.CalledProcessError:
-        return None
 
 
 def get_network_interfaces() -> List[Dict[str, str]]:

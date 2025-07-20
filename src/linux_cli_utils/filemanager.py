@@ -2,7 +2,6 @@
 
 import os
 import shutil
-import subprocess
 from pathlib import Path
 from typing import List, Optional, Dict, Any
 import stat
@@ -13,6 +12,8 @@ from rich.console import Console
 from rich.table import Table
 from rich.tree import Tree
 from rich.panel import Panel
+
+from .utils import run_command, format_size, format_time
 
 app = typer.Typer(help="File management utilities")
 console = Console()
@@ -35,15 +36,6 @@ def get_file_info(path: Path) -> Dict[str, Any]:
         }
     except (OSError, PermissionError):
         return {}
-
-
-def format_size(size: int) -> str:
-    """Format file size in human readable format."""
-    for unit in ["B", "KB", "MB", "GB", "TB"]:
-        if size < 1024.0:
-            return f"{size:.1f} {unit}"
-        size /= 1024.0
-    return f"{size:.1f} PB"
 
 
 def find_files(

@@ -2,11 +2,15 @@ LICENSE
 README.md
 pyproject.toml
 src/linux_cli_utils/__init__.py
+src/linux_cli_utils/backup.py
 src/linux_cli_utils/cli.py
 src/linux_cli_utils/filemanager.py
+src/linux_cli_utils/monitor.py
 src/linux_cli_utils/nettools.py
 src/linux_cli_utils/proctools.py
+src/linux_cli_utils/restore.py
 src/linux_cli_utils/sysinfo.py
+src/linux_cli_utils/utils.py
 src/linux_cli_utils.egg-info/PKG-INFO
 src/linux_cli_utils.egg-info/SOURCES.txt
 src/linux_cli_utils.egg-info/dependency_links.txt
@@ -15,3 +19,4 @@ src/linux_cli_utils.egg-info/requires.txt
 src/linux_cli_utils.egg-info/top_level.txt
 tests/test_filemanager.py
 tests/test_sysinfo.py
+tests/test_utils.py

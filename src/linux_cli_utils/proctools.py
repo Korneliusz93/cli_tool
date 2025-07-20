@@ -2,7 +2,6 @@
 
 import os
 import signal
-import subprocess
 from typing import Dict, List, Optional
 import time
 
@@ -11,6 +10,8 @@ import typer
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
+
+from .utils import run_command, format_size, format_time
 
 app = typer.Typer(help="Process management utilities")
 console = Console()
@@ -90,20 +91,6 @@ def find_processes(name: str) -> List[Dict]:
             continue
 
     return processes
-
-
-def format_time(timestamp: float) -> str:
-    """Format timestamp to readable time."""
-    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timestamp))
-
-
-def format_memory(bytes_value: int) -> str:
-    """Format memory value to human readable format."""
-    for unit in ["B", "KB", "MB", "GB"]:
-        if bytes_value < 1024:
-            return f"{bytes_value:.1f} {unit}"
-        bytes_value /= 1024
-    return f"{bytes_value:.1f} TB"
 
 
 @app.command()
@@ -218,8 +205,8 @@ def info(pid: int = typer.Argument(..., help="Process ID to inspect")):
     table.add_row("Status", proc_info["status"])
     table.add_row("CPU %", f"{proc_info['cpu_percent']:.1f}")
     table.add_row("Memory %", f"{proc_info['memory_percent']:.1f}")
-    table.add_row("Memory RSS", format_memory(proc_info["memory_info"].rss))
-    table.add_row("Memory VMS", format_memory(proc_info["memory_info"].vms))
+    table.add_row("Memory RSS", format_size(proc_info["memory_info"].rss))
+    table.add_row("Memory VMS", format_size(proc_info["memory_info"].vms))
     table.add_row("Created", format_time(proc_info["create_time"]))
     table.add_row("User", proc_info["username"])
     table.add_row("Threads", str(proc_info["num_threads"]))

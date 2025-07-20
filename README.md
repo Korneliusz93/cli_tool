@@ -186,10 +186,12 @@ console_apps/
 ├── src/linux_cli_utils/     # Main package
 │   ├── __init__.py
 │   ├── cli.py              # Main CLI entry point
+│   ├── utils.py            # Common utility functions
 │   ├── sysinfo.py          # System information utilities
 │   ├── filemanager.py      # File management utilities
 │   ├── nettools.py         # Network utilities
-│   └── proctools.py        # Process management utilities
+│   ├── proctools.py        # Process management utilities
+│   └── backup.py           # Backup and snapshot utilities
 ├── tests/                  # Test suite
 ├── .vscode/               # VS Code configuration
 ├── .github/               # GitHub and Copilot instructions
