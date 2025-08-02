@@ -213,3 +213,10 @@ Parts of this script were assisted by AI tools, including:
 
 All output was reviewed and tested by me on openSUSE Linux.
 
+### Installing the Man Page
+
+After cloning this repository, you can install the man page as follows:
+
+```sh
+sudo cp man/cli_tool.1 /usr/local/share/man/man1/
+sudo mandb
