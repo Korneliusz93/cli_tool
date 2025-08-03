@@ -1,0 +1,13 @@
+[Unit]
+Description=AI Lab CLI Utilities - Process Monitor Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/linux-proctools monitor --interval 5
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

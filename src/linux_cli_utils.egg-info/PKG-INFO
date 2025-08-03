@@ -7,6 +7,8 @@ Classifier: Intended Audience :: System Administrators
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: POSIX :: Linux
 Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3.10
@@ -14,7 +16,7 @@ Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Classifier: Topic :: System :: Systems Administration
 Classifier: Topic :: Utilities
-Requires-Python: >=3.8
+Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: click>=8.0.0
@@ -32,7 +34,7 @@ Dynamic: license-file
 
 # Linux CLI Utilities
 
-A collection of Python-based command line utilities designed for openSUSE Linux and other Linux distributions.
+A collection of Python-based command line utilities designed for openSUSE Linux and other Linux distributions. Perfect for your AI Lab setup!
 
 ## Features
 
@@ -40,8 +42,26 @@ A collection of Python-based command line utilities designed for openSUSE Linux 
 - **File Management Utilities**: Advanced file operations and organization tools
 - **Network Utilities**: Network monitoring and configuration helpers
 - **Process Management**: Enhanced process monitoring and management tools
+- **Backup & Snapshots**: Comprehensive Snapper-based backup utilities
 
-## Installation
+## Quick Installation (Recommended)
+
+For system-wide installation with automatic dependency management:
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd console_apps
+
+# Install system-wide (requires sudo)
+sudo ./install.sh
+
+# Start using immediately
+linux-utils --help
+linux-sysinfo overview
+```
+
+## Manual Installation
 
 1. Clone or download this project
 2. Create a virtual environment (already configured):
@@ -57,6 +77,22 @@ A collection of Python-based command line utilities designed for openSUSE Linux 
    ```bash
    pip install -e .
    ```
+
+## System Commands (After Installation)
+
+After running `sudo ./install.sh`, these commands will be available system-wide:
+
+```bash
+linux-utils --help              # Main CLI interface
+linux-sysinfo overview          # System information
+linux-filemanager ls -l         # File management
+linux-nettools interfaces       # Network tools
+linux-proctools top             # Process management
+linux-backup list-snapshots     # Backup utilities
+
+# View manual page
+man linux-utils
+```
 
 ## Quick Usage
 
@@ -199,9 +235,11 @@ Available VS Code tasks:
 
 ## Requirements
 
-- Python 3.8+
-- openSUSE Linux (or other Linux distributions)
-- Standard Linux utilities (ps, df, lscpu, ip, etc.)
+## Requirements
+
+- Python 3.6 or higher
+- openSUSE Linux (or other Linux distribution with systemd)
+- Basic development tools (gcc, make)
 
 ## Dependencies
 
@@ -218,10 +256,12 @@ console_apps/
 ├── src/linux_cli_utils/     # Main package
 │   ├── __init__.py
 │   ├── cli.py              # Main CLI entry point
+│   ├── utils.py            # Common utility functions
 │   ├── sysinfo.py          # System information utilities
 │   ├── filemanager.py      # File management utilities
 │   ├── nettools.py         # Network utilities
-│   └── proctools.py        # Process management utilities
+│   ├── proctools.py        # Process management utilities
+│   └── backup.py           # Backup and snapshot utilities
 ├── tests/                  # Test suite
 ├── .vscode/               # VS Code configuration
 ├── .github/               # GitHub and Copilot instructions
@@ -243,3 +283,10 @@ Parts of this script were assisted by AI tools, including:
 
 All output was reviewed and tested by me on openSUSE Linux.
 
+### Installing the Man Page
+
+After cloning this repository, you can install the man page as follows:
+
+```sh
+sudo cp man/cli_tool.1 /usr/local/share/man/man1/
+sudo mandb

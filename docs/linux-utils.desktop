@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AI Lab CLI Utilities
+Comment=Linux command line utilities for system administration
+Exec=gnome-terminal -- linux-utils list-tools
+Icon=utilities-terminal
+Terminal=true
+Categories=System;Monitor;
+Keywords=system;monitor;cli;terminal;admin;linux;utilities;

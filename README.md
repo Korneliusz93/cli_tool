@@ -1,6 +1,6 @@
 # Linux CLI Utilities
 
-A collection of Python-based command line utilities designed for openSUSE Linux and other Linux distributions.
+A collection of Python-based command line utilities designed for openSUSE Linux and other Linux distributions. Perfect for your AI Lab setup!
 
 ## Features
 
@@ -8,8 +8,26 @@ A collection of Python-based command line utilities designed for openSUSE Linux 
 - **File Management Utilities**: Advanced file operations and organization tools
 - **Network Utilities**: Network monitoring and configuration helpers
 - **Process Management**: Enhanced process monitoring and management tools
+- **Backup & Snapshots**: Comprehensive Snapper-based backup utilities
 
-## Installation
+## Quick Installation (Recommended)
+
+For system-wide installation with automatic dependency management:
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd console_apps
+
+# Install system-wide (requires sudo)
+sudo ./install.sh
+
+# Start using immediately
+linux-utils --help
+linux-sysinfo overview
+```
+
+## Manual Installation
 
 1. Clone or download this project
 2. Create a virtual environment (already configured):
@@ -25,6 +43,22 @@ A collection of Python-based command line utilities designed for openSUSE Linux 
    ```bash
    pip install -e .
    ```
+
+## System Commands (After Installation)
+
+After running `sudo ./install.sh`, these commands will be available system-wide:
+
+```bash
+linux-utils --help              # Main CLI interface
+linux-sysinfo overview          # System information
+linux-filemanager ls -l         # File management
+linux-nettools interfaces       # Network tools
+linux-proctools top             # Process management
+linux-backup list-snapshots     # Backup utilities
+
+# View manual page
+man linux-utils
+```
 
 ## Quick Usage
 
@@ -167,9 +201,11 @@ Available VS Code tasks:
 
 ## Requirements
 
-- Python 3.8+
-- openSUSE Linux (or other Linux distributions)
-- Standard Linux utilities (ps, df, lscpu, ip, etc.)
+## Requirements
+
+- Python 3.6 or higher
+- openSUSE Linux (or other Linux distribution with systemd)
+- Basic development tools (gcc, make)
 
 ## Dependencies
 

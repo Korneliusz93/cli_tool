@@ -32,7 +32,7 @@ from rich.table import Table
 from rich.tree import Tree
 from rich.panel import Panel
 
-from .utils import run_command, format_size, format_time, check_command_exists
+from linux_cli_utils.utils import run_command, format_size, format_time, check_command_exists
 
 app = typer.Typer(help="Backup and snapshot utilities")
 console = Console()

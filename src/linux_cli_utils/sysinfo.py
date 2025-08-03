@@ -10,7 +10,7 @@ from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 
-from .utils import run_command, format_size, format_time
+from linux_cli_utils.utils import run_command, format_size, format_time
 
 app = typer.Typer(help="System information utilities")
 console = Console()

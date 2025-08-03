@@ -8,7 +8,6 @@ src/linux_cli_utils/filemanager.py
 src/linux_cli_utils/monitor.py
 src/linux_cli_utils/nettools.py
 src/linux_cli_utils/proctools.py
-src/linux_cli_utils/restore.py
 src/linux_cli_utils/sysinfo.py
 src/linux_cli_utils/utils.py
 src/linux_cli_utils.egg-info/PKG-INFO

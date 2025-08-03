@@ -1,0 +1,300 @@
+.TH LINUX-UTILS 1 "August 2025" "Linux CLI Utilities 0.1.0" "User Commands"
+.SH NAME
+linux-utils \- A collection of command line utilities for Linux system administration
+.SH SYNOPSIS
+.B linux-utils
+[\fIOPTION\fR]... \fICOMMAND\fR [\fIARGS\fR]...
+.br
+.B linux-sysinfo
+[\fIOPTION\fR]... \fICOMMAND\fR [\fIARGS\fR]...
+.br
+.B linux-filemanager
+[\fIOPTION\fR]... \fICOMMAND\fR [\fIARGS\fR]...
+.br
+.B linux-nettools
+[\fIOPTION\fR]... \fICOMMAND\fR [\fIARGS\fR]...
+.br
+.B linux-proctools
+[\fIOPTION\fR]... \fICOMMAND\fR [\fIARGS\fR]...
+.br
+.B linux-backup
+[\fIOPTION\fR]... \fICOMMAND\fR [\fIARGS\fR]...
+.SH DESCRIPTION
+Linux CLI Utilities is a collection of Python-based command line tools designed for Linux system administration and monitoring. The toolkit provides enhanced alternatives to standard Linux commands with rich terminal output and advanced functionality.
+.SH COMMANDS
+.SS Main Interface
+.TP
+.B linux-utils list-tools
+List all available tools and their descriptions
+.TP
+.B linux-utils version
+Show version information
+.TP
+.B linux-utils TOOL COMMAND
+Run a specific tool command (e.g., linux-utils sysinfo overview)
+.SS System Information (sysinfo)
+.TP
+.B linux-sysinfo overview
+Display comprehensive system overview including CPU, memory, and system information
+.TP
+.B linux-sysinfo cpu
+Show detailed CPU information and usage statistics
+.TP
+.B linux-sysinfo memory
+Display memory and swap usage information
+.TP
+.B linux-sysinfo disk
+Show disk usage for all mounted filesystems
+.TP
+.B linux-sysinfo network
+Display network interface information
+.SS File Management (filemanager)
+.TP
+.B linux-filemanager ls [\fIPATH\fR] [\fIOPTIONS\fR]
+Enhanced directory listing with detailed information
+.RS
+.TP
+.B -l, --long
+Use long listing format
+.TP
+.B -a, --all
+Show hidden files
+.TP
+.B -h, --human-readable
+Display file sizes in human readable format
+.RE
+.TP
+.B linux-filemanager find [\fIDIRECTORY\fR] [\fIOPTIONS\fR]
+Find files and directories with advanced filtering
+.RS
+.TP
+.B -p, --pattern \fIPATTERN\fR
+Search pattern (wildcards supported)
+.TP
+.B -n, --name \fINAME\fR
+Search by name (partial matches)
+.TP
+.B -t, --type \fITYPE\fR
+File type: all, files, dirs
+.TP
+.B --hidden
+Include hidden files in search
+.RE
+.TP
+.B linux-filemanager tree [\fIPATH\fR] [\fIOPTIONS\fR]
+Display directory structure as a tree
+.RS
+.TP
+.B -d, --depth \fIDEPTH\fR
+Maximum tree depth (default: 3)
+.TP
+.B -a, --all
+Show hidden files
+.RE
+.TP
+.B linux-filemanager du [\fIPATH\fR] [\fIOPTIONS\fR]
+Analyze disk usage with enhanced output
+.RS
+.TP
+.B -h, --human-readable
+Human readable sizes
+.TP
+.B -s, --summarize
+Show only total
+.RE
+.SS Network Tools (nettools)
+.TP
+.B linux-nettools interfaces
+Display network interface information and status
+.TP
+.B linux-nettools ping \fIHOST\fR [\fIOPTIONS\fR]
+Ping a host with detailed statistics
+.RS
+.TP
+.B -c, --count \fICOUNT\fR
+Number of packets to send (default: 4)
+.RE
+.TP
+.B linux-nettools portscan \fIHOST\fR [\fIOPTIONS\fR]
+Scan ports on a host
+.RS
+.TP
+.B -p, --ports \fIPORTS\fR
+Comma-separated list of ports (default: 22,80,443,8080)
+.TP
+.B -t, --timeout \fISECONDS\fR
+Connection timeout (default: 1)
+.RE
+.TP
+.B linux-nettools routes
+Display routing table information
+.TP
+.B linux-nettools netstat
+Show network connections and listening ports
+.SS Process Management (proctools)
+.TP
+.B linux-proctools ps [\fIOPTIONS\fR]
+Enhanced process listing
+.RS
+.TP
+.B -u, --user \fIUSER\fR
+Filter by username
+.TP
+.B -s, --sort \fIFIELD\fR
+Sort by: cpu, memory, pid, name
+.TP
+.B -l, --limit \fINUMBER\fR
+Limit number of results
+.RE
+.TP
+.B linux-proctools top [\fIOPTIONS\fR]
+Show top processes by resource usage
+.RS
+.TP
+.B -l, --limit \fINUMBER\fR
+Number of processes to show
+.TP
+.B -s, --sort \fIFIELD\fR
+Sort by: cpu, memory
+.RE
+.TP
+.B linux-proctools info \fIPID\fR
+Show detailed information about a process
+.TP
+.B linux-proctools find \fINAME\fR
+Find processes by name
+.TP
+.B linux-proctools kill \fIPID\fR [\fIOPTIONS\fR]
+Terminate a process
+.RS
+.TP
+.B -f, --force
+Force kill (SIGKILL instead of SIGTERM)
+.RE
+.TP
+.B linux-proctools monitor [\fIOPTIONS\fR]
+Real-time process monitoring
+.RS
+.TP
+.B -i, --interval \fISECONDS\fR
+Update interval (default: 2)
+.TP
+.B -l, --limit \fINUMBER\fR
+Number of processes to show
+.RE
+.SS Backup and Snapshots (backup)
+.TP
+.B linux-backup backup [\fIOPTIONS\fR]
+Create a system backup using Snapper snapshots
+.RS
+.TP
+.B --desc \fIDESCRIPTION\fR
+Snapshot description
+.RE
+.TP
+.B linux-backup list-snapshots [\fIOPTIONS\fR]
+List existing snapshots
+.RS
+.TP
+.B -c, --config \fICONFIG\fR
+Snapper configuration (default: root)
+.TP
+.B -l, --limit \fINUMBER\fR
+Limit number of snapshots to show
+.RE
+.TP
+.B linux-backup snapshot-info \fIID\fR [\fIOPTIONS\fR]
+Show detailed information about a snapshot
+.TP
+.B linux-backup delete-snapshot \fIID\fR [\fIOPTIONS\fR]
+Delete a snapshot
+.RS
+.TP
+.B --sync
+Delete synchronously (free space immediately)
+.RE
+.TP
+.B linux-backup mount-snapshot \fIID\fR \fIMOUNT_POINT\fR
+Mount a snapshot for file recovery
+.TP
+.B linux-backup umount-snapshot \fIID\fR
+Unmount a snapshot
+.TP
+.B linux-backup restore-file \fIFILE_PATH\fR \fIFROM_SNAPSHOT\fR [\fIOPTIONS\fR]
+Restore a file or directory from a snapshot
+.SH OPTIONS
+.TP
+.B --help
+Show help message and exit
+.TP
+.B --install-completion
+Install shell completion
+.TP
+.B --show-completion
+Show completion script
+.SH EXAMPLES
+.TP
+Display system overview:
+.B linux-utils sysinfo overview
+.TP
+List files in long format:
+.B linux-filemanager ls -l /home
+.TP
+Find Python files:
+.B linux-filemanager find . -p "*.py"
+.TP
+Show directory tree:
+.B linux-filemanager tree /etc -d 2
+.TP
+Check network interfaces:
+.B linux-nettools interfaces
+.TP
+Ping Google with 10 packets:
+.B linux-nettools ping google.com -c 10
+.TP
+Scan common ports:
+.B linux-nettools portscan localhost
+.TP
+Show top 5 processes by CPU:
+.B linux-proctools top -l 5 -s cpu
+.TP
+Find Firefox processes:
+.B linux-proctools find firefox
+.TP
+Create a backup snapshot:
+.B linux-backup backup --desc "Before system update"
+.TP
+List recent snapshots:
+.B linux-backup list-snapshots -l 5
+.SH FILES
+.TP
+.I /opt/linux-cli-utils/
+Installation directory containing the Python package and virtual environment
+.TP
+.I /usr/local/bin/linux-*
+System command wrappers
+.TP
+.I /etc/bash_completion.d/linux-utils
+Bash completion script
+.SH REQUIREMENTS
+.TP
+Python 3.8 or later
+.TP
+Linux operating system (tested on openSUSE, Ubuntu, Fedora)
+.TP
+Standard Linux utilities (ps, df, lscpu, ip, etc.)
+.TP
+For backup functionality: snapper package
+.SH AUTHOR
+Created for AI Lab Linux CLI Utilities project
+.SH REPORTING BUGS
+Report bugs and issues through the project repository
+.SH COPYRIGHT
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+.SH SEE ALSO
+.BR ps (1),
+.BR df (1),
+.BR lscpu (1),
+.BR ip (8),
+.BR snapper (8)

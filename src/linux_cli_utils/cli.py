@@ -1,14 +1,15 @@
+#!/usr/bin/env python3
 """Main CLI entry point for Linux utilities."""
 
 import typer
 from rich.console import Console
 from rich.table import Table
 
-from .sysinfo import app as sysinfo_app
-from .filemanager import app as filemanager_app
-from .nettools import app as nettools_app
-from .proctools import app as proctools_app
-from .backup import app as backup_app
+from linux_cli_utils.sysinfo import app as sysinfo_app
+from linux_cli_utils.filemanager import app as filemanager_app
+from linux_cli_utils.nettools import app as nettools_app
+from linux_cli_utils.proctools import app as proctools_app
+from linux_cli_utils.backup import app as backup_app
 
 app = typer.Typer(
     help="Linux CLI Utilities - A collection of system administration tools"
@@ -21,7 +22,6 @@ app.add_typer(filemanager_app, name="file", help="File management utilities")
 app.add_typer(nettools_app, name="net", help="Network utilities")
 app.add_typer(proctools_app, name="proc", help="Process management utilities")
 app.add_typer(backup_app, name="backup", help="Backup and snapshot utilities")
-app.add_typer(proctools_app, name="proc", help="Process management utilities")
 
 
 @app.command()
