@@ -128,11 +128,15 @@ python -m linux_cli_utils.backup "$@"
 EOF
 chmod +x "$BIN_DIR/linux-backup"
 
-# Install man page
-if [ -f "docs/linux-utils.1" ]; then
-    echo -e "${YELLOW}Installing man page...${NC}"
-    cp docs/linux-utils.1 "$MAN_DIR/"
-    gzip -f "$MAN_DIR/linux-utils.1"
+# Install man pages
+echo -e "${YELLOW}Installing man pages...${NC}"
+if [ -d "man" ]; then
+    for manpage in man/*.1; do
+        if [ -f "$manpage" ]; then
+            cp "$manpage" "$MAN_DIR/"
+            gzip -f "$MAN_DIR/$(basename "$manpage")"
+        fi
+    done
     mandb >/dev/null 2>&1 || true
 fi
 

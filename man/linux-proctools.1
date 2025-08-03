@@ -1,0 +1,68 @@
+.TH LINUX-PROCTOOLS 1 "August 2025" "Linux CLI Utils v0.1.0" "User Commands"
+.SH NAME
+linux-proctools \- Process management and monitoring utilities
+.SH SYNOPSIS
+.B linux-proctools
+[\fICOMMAND\fR] [\fIOPTIONS\fR] [\fIPID\fR]
+.SH DESCRIPTION
+linux-proctools provides comprehensive process management and monitoring capabilities. It offers enhanced process listing, detailed process information, and process control features.
+.SH COMMANDS
+.TP
+.B list [\-u|\-\-user USER] [\-n|\-\-limit COUNT]
+List running processes with resource usage
+.TP
+.B top [\-n|\-\-limit COUNT] [\-s|\-\-sort FIELD]
+Show top processes by resource usage
+.TP
+.B info PID
+Display detailed information about a specific process
+.TP
+.B tree [\-u|\-\-user USER]
+Show process tree with parent-child relationships
+.TP
+.B kill PID [\-s|\-\-signal SIGNAL]
+Terminate or send signal to a process
+.TP
+.B killall NAME [\-s|\-\-signal SIGNAL]
+Terminate all processes with specified name
+.TP
+.B monitor [\-i|\-\-interval SECONDS]
+Monitor system processes in real-time
+.SH OPTIONS
+.TP
+.B \-u, \-\-user USER
+Filter processes by username
+.TP
+.B \-n, \-\-limit COUNT
+Limit number of processes shown
+.TP
+.B \-s, \-\-sort FIELD
+Sort processes by field (cpu, memory, pid, name)
+.TP
+.B \-\-signal SIGNAL
+Signal to send to process (default: TERM)
+.TP
+.B \-i, \-\-interval SECONDS
+Update interval for monitoring commands
+.SH EXAMPLES
+.TP
+.B linux-proctools list -u root -n 10
+Show top 10 processes owned by root
+.TP
+.B linux-proctools top -s memory
+Show processes sorted by memory usage
+.TP
+.B linux-proctools info 1234
+Show detailed information for process 1234
+.TP
+.B linux-proctools kill 1234 -s KILL
+Force kill process 1234
+.SH SEE ALSO
+.BR linux-utils (1),
+.BR ps (1),
+.BR top (1),
+.BR htop (1),
+.BR kill (1),
+.BR killall (1)
+.SH AUTHOR
+Written by Kornel Rzeczycki for AI Lab CLI Utilities.

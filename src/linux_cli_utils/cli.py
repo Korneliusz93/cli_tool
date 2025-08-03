@@ -50,6 +50,13 @@ def list_tools():
         table.add_row(tool, desc)
 
     console.print(table)
+    console.print("\n[bold cyan]Individual Commands Available:[/bold cyan]")
+    console.print("• [green]linux-sysinfo[/green] - Direct access to system information tools")
+    console.print("• [green]linux-filemanager[/green] - Direct access to file management tools")
+    console.print("• [green]linux-nettools[/green] - Direct access to network tools")
+    console.print("• [green]linux-proctools[/green] - Direct access to process tools")
+    console.print("• [green]linux-backup[/green] - Direct access to backup tools")
+    console.print("\n[italic]Use 'man <command>' to view detailed documentation[/italic]")
 
 
 def main():

@@ -1,0 +1,61 @@
+.TH LINUX-NETTOOLS 1 "August 2025" "Linux CLI Utils v0.1.0" "User Commands"
+.SH NAME
+linux-nettools \- Network monitoring and diagnostic utilities
+.SH SYNOPSIS
+.B linux-nettools
+[\fICOMMAND\fR] [\fIOPTIONS\fR] [\fITARGET\fR]
+.SH DESCRIPTION
+linux-nettools provides comprehensive network monitoring and diagnostic capabilities. It offers interface monitoring, connectivity testing, and network performance analysis.
+.SH COMMANDS
+.TP
+.B interfaces
+Display all network interfaces with detailed information
+.TP
+.B ping HOST [\-c|\-\-count COUNT] [\-t|\-\-timeout TIMEOUT]
+Test network connectivity to a host
+.TP
+.B scan HOST [\-p|\-\-ports PORTS] [\-t|\-\-timeout TIMEOUT]
+Scan ports on a target host
+.TP
+.B monitor [\-i|\-\-interval SECONDS]
+Monitor network interface statistics in real-time
+.TP
+.B connections [\-l|\-\-listening] [\-p|\-\-processes]
+Show network connections and listening ports
+.TP
+.B speed \-i|\-\-interface INTERFACE [\-t|\-\-time SECONDS]
+Test network interface speed
+.SH OPTIONS
+.TP
+.B \-c, \-\-count COUNT
+Number of ping packets to send
+.TP
+.B \-t, \-\-timeout TIMEOUT
+Timeout in seconds for network operations
+.TP
+.B \-p, \-\-ports PORTS
+Port range to scan (e.g., 1-1000 or 22,80,443)
+.TP
+.B \-i, \-\-interface INTERFACE
+Network interface to monitor or test
+.TP
+.B \-\-interval SECONDS
+Update interval for monitoring commands
+.SH EXAMPLES
+.TP
+.B linux-nettools interfaces
+Show all network interfaces
+.TP
+.B linux-nettools ping google.com -c 4
+Ping Google 4 times
+.TP
+.B linux-nettools scan 192.168.1.1 -p 1-1000
+Scan ports 1-1000 on router
+.SH SEE ALSO
+.BR linux-utils (1),
+.BR ping (8),
+.BR netstat (8),
+.BR ss (8),
+.BR nmap (1)
+.SH AUTHOR
+Written by Kornel Rzeczycki for AI Lab CLI Utilities.

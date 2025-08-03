@@ -1,0 +1,57 @@
+.TH LINUX-SYSINFO 1 "August 2025" "Linux CLI Utils v0.1.0" "User Commands"
+.SH NAME
+linux-sysinfo \- System information and hardware monitoring utilities
+.SH SYNOPSIS
+.B linux-sysinfo
+[\fICOMMAND\fR] [\fIOPTIONS\fR]
+.SH DESCRIPTION
+linux-sysinfo provides comprehensive system information and hardware monitoring capabilities for Linux systems. It offers detailed insights into CPU, memory, disk, and network resources.
+.SH COMMANDS
+.TP
+.B overview
+Display complete system overview including CPU, memory, disk, and network information
+.TP
+.B cpu
+Show detailed CPU information including cores, frequencies, and usage
+.TP
+.B memory
+Display memory usage statistics and swap information
+.TP
+.B disk
+Show disk usage for all mounted filesystems
+.TP
+.B network
+List network interfaces and their configurations
+.TP
+.B hardware
+Display hardware information including motherboard, BIOS, and system details
+.TP
+.B sensors
+Show temperature, fan, and voltage sensor readings (requires lm-sensors)
+.SH OPTIONS
+.TP
+.B \-\-help
+Show help message and exit
+.TP
+.B \-\-install\-completion
+Install shell completion for the current shell
+.TP
+.B \-\-show\-completion
+Show completion script for the current shell
+.SH EXAMPLES
+.TP
+.B linux-sysinfo overview
+Display complete system information
+.TP
+.B linux-sysinfo cpu
+Show CPU details and current usage
+.TP
+.B linux-sysinfo memory
+Display memory and swap usage
+.SH SEE ALSO
+.BR linux-utils (1),
+.BR htop (1),
+.BR free (1),
+.BR lscpu (1)
+.SH AUTHOR
+Written by Kornel Rzeczycki for AI Lab CLI Utilities.

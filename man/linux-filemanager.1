@@ -1,0 +1,61 @@
+.TH LINUX-FILEMANAGER 1 "August 2025" "Linux CLI Utils v0.1.0" "User Commands"
+.SH NAME
+linux-filemanager \- Enhanced file management and organization utilities
+.SH SYNOPSIS
+.B linux-filemanager
+[\fICOMMAND\fR] [\fIOPTIONS\fR] [\fIPATH\fR]
+.SH DESCRIPTION
+linux-filemanager provides enhanced file management capabilities beyond standard Linux commands. It offers improved directory listings, file search, and disk usage analysis with rich formatting.
+.SH COMMANDS
+.TP
+.B ls [PATH] [\-l|\-\-long] [\-a|\-\-all] [\-s|\-\-size]
+Enhanced directory listing with colors and formatting
+.TP
+.B tree [PATH] [\-d|\-\-max\-depth DEPTH]
+Display directory structure as a tree
+.TP
+.B find [PATH] \-n|\-\-name PATTERN [\-t|\-\-type TYPE]
+Search for files and directories by name and type
+.TP
+.B du [PATH] [\-d|\-\-max\-depth DEPTH]
+Analyze disk usage for directories and files
+.TP
+.B organize [PATH] [\-\-dry\-run]
+Organize files by type into subdirectories
+.TP
+.B cleanup [PATH] [\-\-days DAYS] [\-\-dry\-run]
+Clean up temporary and old files
+.SH OPTIONS
+.TP
+.B \-l, \-\-long
+Show detailed file information (permissions, size, date)
+.TP
+.B \-a, \-\-all
+Include hidden files and directories
+.TP
+.B \-s, \-\-size
+Sort by file size
+.TP
+.B \-d, \-\-max\-depth DEPTH
+Limit directory traversal depth
+.TP
+.B \-\-dry\-run
+Show what would be done without making changes
+.SH EXAMPLES
+.TP
+.B linux-filemanager ls -l
+Show detailed listing of current directory
+.TP
+.B linux-filemanager tree /home/user -d 2
+Show directory tree with maximum depth of 2
+.TP
+.B linux-filemanager find /var -n "*.log" -t f
+Find all log files in /var directory
+.SH SEE ALSO
+.BR linux-utils (1),
+.BR ls (1),
+.BR find (1),
+.BR tree (1),
+.BR du (1)
+.SH AUTHOR
+Written by Kornel Rzeczycki for AI Lab CLI Utilities.

@@ -1,0 +1,66 @@
+.TH LINUX-BACKUP 1 "August 2025" "Linux CLI Utils v0.1.0" "User Commands"
+.SH NAME
+linux-backup \- Backup and snapshot management utilities
+.SH SYNOPSIS
+.B linux-backup
+[\fICOMMAND\fR] [\fIOPTIONS\fR] [\fIPATH\fR]
+.SH DESCRIPTION
+linux-backup provides comprehensive backup and snapshot management using Snapper. It offers snapshot creation, management, and restoration capabilities for system backup and recovery.
+.SH COMMANDS
+.TP
+.B create-snapshot [DESCRIPTION] [\-c|\-\-config CONFIG]
+Create a new filesystem snapshot
+.TP
+.B list-snapshots [\-c|\-\-config CONFIG] [\-t|\-\-type TYPE]
+List all available snapshots
+.TP
+.B delete-snapshot NUMBER [\-c|\-\-config CONFIG]
+Delete a specific snapshot by number
+.TP
+.B compare-snapshots NUM1 NUM2 [\-c|\-\-config CONFIG]
+Compare differences between two snapshots
+.TP
+.B mount-snapshot NUMBER [\-c|\-\-config CONFIG]
+Mount a snapshot for browsing
+.TP
+.B restore-snapshot NUMBER [\-c|\-\-config CONFIG] [\-\-dry\-run]
+Restore system from a snapshot
+.TP
+.B backup-home [DESTINATION] [\-\-exclude PATTERN]
+Backup home directory using rsync
+.TP
+.B cleanup [\-c|\-\-config CONFIG]
+Clean up old snapshots based on policy
+.SH OPTIONS
+.TP
+.B \-c, \-\-config CONFIG
+Snapper configuration to use (default: root)
+.TP
+.B \-t, \-\-type TYPE
+Filter snapshots by type (single, pre, post)
+.TP
+.B \-\-exclude PATTERN
+Exclude files matching pattern from backup
+.TP
+.B \-\-dry\-run
+Show what would be done without making changes
+.SH EXAMPLES
+.TP
+.B linux-backup create-snapshot "Before system update"
+Create snapshot with description
+.TP
+.B linux-backup list-snapshots
+List all available snapshots
+.TP
+.B linux-backup compare-snapshots 1 2
+Compare snapshots 1 and 2
+.TP
+.B linux-backup backup-home /backup/home
+Backup home directory to external location
+.SH SEE ALSO
+.BR linux-utils (1),
+.BR snapper (8),
+.BR rsync (1),
+.BR btrfs (8)
+.SH AUTHOR
+Written by Kornel Rzeczycki for AI Lab CLI Utilities.

@@ -1,0 +1,85 @@
+.TH LINUX-UTILS 1 "August 2025" "Linux CLI Utils v0.1.0" "User Commands"
+.SH NAME
+linux-utils \- Main interface for AI Lab Linux CLI Utilities
+.SH SYNOPSIS
+.B linux-utils
+[\fICOMMAND\fR] [\fIOPTIONS\fR]
+.SH DESCRIPTION
+linux-utils is the main command interface for the AI Lab CLI Utilities collection. It provides access to system administration tools through subcommands or individual utilities.
+.SH SUBCOMMANDS
+.TP
+.B sysinfo
+System information and hardware monitoring utilities
+.TP
+.B file
+Enhanced file management and organization utilities
+.TP
+.B net
+Network monitoring and diagnostic utilities
+.TP
+.B proc
+Process management and monitoring utilities
+.TP
+.B backup
+Backup and snapshot management utilities
+.SH INDIVIDUAL COMMANDS
+Each utility can also be accessed directly:
+.TP
+.B linux-sysinfo
+Direct access to system information tools
+.TP
+.B linux-filemanager
+Direct access to file management tools
+.TP
+.B linux-nettools
+Direct access to network tools
+.TP
+.B linux-proctools
+Direct access to process tools
+.TP
+.B linux-backup
+Direct access to backup tools
+.SH GLOBAL OPTIONS
+.TP
+.B \-\-help
+Show help message and exit
+.TP
+.B \-\-install\-completion
+Install shell completion for the current shell
+.TP
+.B \-\-show\-completion
+Show completion script for the current shell
+.SH EXAMPLES
+.TP
+.B linux-utils sysinfo overview
+Show system overview using subcommand interface
+.TP
+.B linux-sysinfo overview
+Show system overview using individual command
+.TP
+.B linux-utils list-tools
+List all available tools and commands
+.TP
+.B linux-utils version
+Show version information
+.SH FILES
+.TP
+.I /usr/local/bin/linux-utils
+Main command interface
+.TP
+.I /usr/local/bin/linux-*
+Individual utility commands
+.TP
+.I /usr/local/man/man1/linux-*.1.gz
+Manual pages for all utilities
+.SH SEE ALSO
+.BR linux-sysinfo (1),
+.BR linux-filemanager (1),
+.BR linux-nettools (1),
+.BR linux-proctools (1),
+.BR linux-backup (1),
+.BR ailab (1)
+.SH AUTHOR
+Written by Kornel Rzeczycki for AI Lab CLI Utilities.
+.SH REPORTING BUGS
+Report bugs and issues on the project repository.

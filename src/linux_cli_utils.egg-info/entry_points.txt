@@ -1,3 +1,8 @@
 [console_scripts]
 ailab = linux_cli_utils.cli:main
+linux-backup = linux_cli_utils.backup:main
+linux-filemanager = linux_cli_utils.filemanager:main
+linux-nettools = linux_cli_utils.nettools:main
+linux-proctools = linux_cli_utils.proctools:main
+linux-sysinfo = linux_cli_utils.sysinfo:main
 linux-utils = linux_cli_utils.cli:main

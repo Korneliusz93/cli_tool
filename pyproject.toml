@@ -35,6 +35,11 @@ dependencies = [
 [project.scripts]
 linux-utils = "linux_cli_utils.cli:main"
 ailab = "linux_cli_utils.cli:main"
+linux-sysinfo = "linux_cli_utils.sysinfo:main"
+linux-filemanager = "linux_cli_utils.filemanager:main"
+linux-nettools = "linux_cli_utils.nettools:main"
+linux-proctools = "linux_cli_utils.proctools:main"
+linux-backup = "linux_cli_utils.backup:main"
 
 [project.optional-dependencies]
 dev = [
